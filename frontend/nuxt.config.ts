@@ -12,7 +12,7 @@ export default defineNuxtConfig({
     head: {
       title: 'Blog made with Nuxt3',
       link: [
-        { rel: 'icon', type: 'image/x-icon', href: process.env.APP_BASEURL + '/favicon.ico' },
+        { rel: 'icon', type: 'image/x-icon', href: process.env.APP_CDNURL + '/favicon.ico' },
       ],
     },
     cdnURL: process.env.APP_CDNURL,
