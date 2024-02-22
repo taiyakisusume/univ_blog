@@ -12,22 +12,22 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v4
-    - name: Install modules
+    - name: Install Modules
       run: |
         cd frontend
         yarn install
-    - name: Generate output
+    - name: Generate Output
       id: generate_output
       run: |
         cd frontend
         npx nuxt generate
-    - name: Upload artifacts
-      id: upload_artifacts
+    - name: Upload Artifacts
       if: steps.generate_output.outcome == 'success'
+      id: upload_artifacts
       uses: actions/upload-artifact@v4
       with:
         name: output
         path: frontend/.output
-    - name: Fire webhook
+    - name: Fire Webhook
       if: steps.upload_artifacts.outcome == 'success'
       run: curl -X POST -d 'secret-key=${{ secrets.SECRET_KEY }}' https://home.hiroshima-u.ac.jp/constantan/webhook.cgi
