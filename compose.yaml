@@ -1,0 +1,18 @@
+version: '3.9'
+
+services:
+  nuxt:
+    container_name: nuxt
+    build: ./frontend
+    volumes:
+      - ./frontend:/code
+    ports:
+      - "80:3000"
+      - "24678:3000"
+    tty: true
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+      - APP_CDNURL=${APP_CDNURL}
+    command: >
+      bash -c "rm -rf /tmp/nitro/worker-* &&
+      yarn dev"
