@@ -15,7 +15,6 @@ export default defineNuxtConfig({
         { rel: 'icon', type: 'image/x-icon', href: process.env.APP_BASEURL + 'favicon.ico' },
       ],
     },
-    // cdnURL: process.env.APP_CDNURL,
     baseURL: process.env.APP_BASEURL,
   },
   modules: ["nuxt-microcms-module"],
