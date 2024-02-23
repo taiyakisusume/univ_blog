@@ -29,7 +29,7 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: output
-        path: frontend/.output
+        path: frontend/.output/public
     - name: Fire Webhook
       if: steps.upload_artifacts.outcome == 'success'
       run: curl -X POST -d 'secret-key=${{ secrets.SECRET_KEY }}' https://home.hiroshima-u.ac.jp/constantan/webhook.cgi
