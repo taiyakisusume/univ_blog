@@ -10,7 +10,7 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
-      title: 'Blog made with Nuxt3',
+      title: 'Jamstack Blog',
       link: [
         { rel: 'icon', type: 'image/x-icon', href: process.env.APP_CDNURL + '/favicon.ico' },
       ],
