@@ -1,5 +1,9 @@
 <script setup lang="ts">
+import type {Blog} from "~/types/blog";
 
+const { data } = await useMicroCMSGetList<Blog>({
+  endpoint: "blogs",
+});
 </script>
 
 <template>
@@ -8,7 +12,23 @@
     <hr />
     <NuxtLink to="/about">このブログについての情報はこちら</NuxtLink>
     <br />
-    <p>ここに記事一覧が表示される予定</p>
+    <ul>
+      <li v-for="blog in data?.contents" :key="blog.id">
+        <NuxtLink :to="`/${blog.id}`">
+          <div>
+            <div>
+              {{ blog.category?.name }}
+            </div>
+            <div>
+              {{ blog.title }}
+            </div>
+            <div>
+              {{ blog.publishedAt ?? blog.createdAt }}
+            </div>
+          </div>
+        </NuxtLink>
+      </li>
+    </ul>
   </div>
 </template>
 
