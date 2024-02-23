@@ -13,6 +13,8 @@ services:
     environment:
       - CHOKIDAR_USEPOLLING=true
       - APP_CDNURL=${APP_CDNURL}
+      - MICROCMS_SERVICE_DOMAIN=${MICROCMS_SERVICE_DOMAIN}
+      - MICROCMS_API_KEY=${MICROCMS_API_KEY}
     command: >
       bash -c "rm -rf /tmp/nitro/worker-* &&
       yarn dev"

@@ -18,4 +18,9 @@ export default defineNuxtConfig({
     cdnURL: process.env.APP_CDNURL,
     baseURL: process.env.APP_BASEURL,
   },
+  modules: ["nuxt-microcms-module"],
+  microCMS: {
+    serviceDomain: process.env.MICROCMS_SERVICE_DOMAIN,
+    apiKey: process.env.MICROCMS_API_KEY,
+  },
 })
