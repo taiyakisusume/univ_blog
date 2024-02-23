@@ -15,6 +15,6 @@ services:
       - APP_BASEURL=${APP_BASEURL}
       - MICROCMS_SERVICE_DOMAIN=${MICROCMS_SERVICE_DOMAIN}
       - MICROCMS_API_KEY=${MICROCMS_API_KEY}
-    command: >
-      bash -c "rm -rf /tmp/nitro/worker-* &&
-      yarn dev"
+    command: |
+      rm -rf /tmp/nitro/worker-* &&
+      yarn dev
