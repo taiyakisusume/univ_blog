@@ -8,15 +8,12 @@ services:
       - ./frontend:/code
     ports:
       - "80:3000"
-      - "24678:3000"
-    tty: true
-    stdin_open: true
     environment:
-      - CHOKIDAR_USEPOLLING=true
       - APP_BASEURL=${APP_BASEURL}
       - MICROCMS_SERVICE_DOMAIN=${MICROCMS_SERVICE_DOMAIN}
       - MICROCMS_API_KEY=${MICROCMS_API_KEY}
     command: >
       bash -c "rm -rf /tmp/nitro/worker-* &&
       yarn &&
-      yarn dev"
+      yarn generate &&
+      npx serve .output/public"

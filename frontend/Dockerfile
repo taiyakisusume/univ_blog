@@ -8,4 +8,4 @@ ENV APP_ROOT /code
 WORKDIR ${APP_ROOT}
 COPY . ${APP_ROOT}
 ENV HOST 0.0.0.0
-RUN yarn install
+RUN #yarn install
